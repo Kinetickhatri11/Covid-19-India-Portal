@@ -68,7 +68,7 @@ app.post("/login/", async (request, response) => {
       console.log("authentication Success");
       const payload = { username: username };
       const jwtToken = jwt.sign(payload, "MY_SECERT_KEY");
-      response.send(jwtToken);
+      response.send({jwtToken});
       console.log(jwtToken);
     } else {
       response.status(400);
